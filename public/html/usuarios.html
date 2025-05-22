@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="preload">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline';
+      style-src 'self' 'unsafe-inline';
+      connect-src 'self' http://localhost:*;
+      img-src 'self' data:;
+      object-src 'none';
+    " />
+  <title>Gerenciar Usuários</title>
+  <link rel="stylesheet" href="./../style/usuarios.css" />
+</head>
+
+<body>
+  <div class="barra-topo">
+    <div class="empresa" id="nomeEmpresa">Nome da Empresa</div>
+    <div class="titulo">
+      Lista de Usuários
+    </div>
+    <div class="conta">
+      <span id="nomeUsuario"></span>
+      <div id="voltar">
+
+      </div>
+    </div>
+
+  </div>
+  <div id="Notificacao-sucesso" class="notificacao" style="display: none;"></div>
+
+  <button id="adicionarUserBtn">Adicionar Usuário</button>
+
+  <div>
+    <table id="tabelaUsuarios">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Login</th>
+          <th>Tipo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Usuários serão adicionados aqui -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal de Usuário -->
+  <div id="userModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="fechar" style="cursor: pointer;">&times;</span>
+      <form id="Form">
+        <div class="form-group">
+          <label for="nomeUsuario">Nome</label>
+          <input type="text" id="nomeUsuario" name="nomeUsuario" required />
+        </div>
+        <div class="form-group">
+          <label for="loginUsuario">Login</label>
+          <input type="text" id="loginUsuario" name="loginUsuario" required />
+        </div>
+        <div class="form-group">
+          <label for="senhaUsuario">Senha</label>
+          <input type="password" id="senhaUsuario" name="senhaUsuario" required />
+        </div>
+        <div class="form-group">
+          <label for="tipoUsuario">Tipo (0 ou 1)</label>
+
+          <select name="tipoUsuario" id="tipoUsuario">
+            <option value="">Tipo de Usuário</option>
+            <option value="0">Administrador</option>
+            <option value="1">Usuário</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="cancelar">Cancelar</button>
+          <button type="submit" class="save">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./../JS/carregaUsuarios.js"></script>
+  <script src="./../JS/modalUsuario.js"></script>
+</body>
+
+</html>

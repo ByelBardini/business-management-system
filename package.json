@@ -1,0 +1,22 @@
+{
+  "name": "si-25-7a",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "- [Design no Figma](https://www.figma.com/design/0Pmzh1nYdpymAjBh1MBWr6/2a-avalia%C3%A7%C3%A3o?node-id=0-1&t=nkLeKsB2xrBDi0uT-1)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.1"
+  }
+}

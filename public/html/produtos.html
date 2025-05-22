@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="preload">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Produtos</title>
+  <link rel="stylesheet" href="../style/produtos.css">
+  <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self';
+      style-src 'self' 'unsafe-inline';
+      connect-src 'self' http://localhost:*;
+      img-src 'self' data:;
+      object-src 'none';
+    ">
+</head>
+
+<body>
+  <div id="barra-top" class="barra-topo">
+    <div class="empresa" id="nomeEmpresa">Nome da Empresa</div>
+    <div id="div">
+      <button class="dark-mode">Dark Mode</button>
+    </div>
+    <div class="conta">
+      <span id="nomeUsuario"></span>
+      <button class="botao-sair">Sair</button>
+    </div>
+  </div>
+  <div class="opcoes">
+    <div class="titulo">Produtos</div>
+    <button class="botao-adicionar" id="adicionarProdutoBtn">Adicionar</button>
+  </div>
+
+  <div id="listaproduto-raiz">
+    <!-- Produtos serão adicionados aqui pelo JavaScript -->
+  </div>
+
+  <!-- Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="fechar">&times;</span>
+      <form id="productForm">
+        <div class="form-group">
+          <label for="productName">Nome</label>
+          <input type="text" id="productName" name="productName" required>
+        </div>
+        <div class="form-group-inline">
+          <div class="descricao">
+            <label for="productDescription">Descrição</label>
+            <textarea id="productDescription" name="productDescription" style="height: 200px;" required></textarea>
+          </div>
+          <div class="image-upload">
+            <label>Produto</label>
+            <input type="file" id="productImage" name="productImage" accept="image/*" style="display: none;">
+            <div class="image-preview" id="imagePreview">
+              <span>+</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group-inline">
+          <div class="form-group">
+            <label for="productPrice">Preço</label>
+            <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+          </div>
+          <div class="form-group">
+            <label for="productQuantity">Quantidade</label>
+            <input type="number" id="productQuantity" name="productQuantity" required>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="cancelar">Cancelar</button>
+          <button type="submit" class="save">Adicionar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="Notificacao-sucesso" class="notificacao"></div>
+  <script src="../JS/modalProdutos.js"></script>
+  <script src="../JS/script.js"></script>
+  <script src="../JS/carregaProdutos.js"></script>
+</body>
+
+</html>

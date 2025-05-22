@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página de Login</title>
+  <link rel="stylesheet" href="../style/style.css" />
+  <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self';
+      style-src 'self' 'unsafe-inline';
+      connect-src 'self' http://localhost:*;
+      img-src 'self' data:;
+      object-src 'none';
+    ">
+</head>
+
+<body>
+  <div class="login-container">
+    <img src="../../images/icone.png" alt="Logo" />
+    <input type="text" id="login" name="login_usuario" placeholder="Usuário" required />
+    <input type="password" id="senha" name="senha_usuario" placeholder="Senha" required />
+    <button type="submit" class="botao-login">Entrar</button>
+  </div>
+  <script src="../JS/script.js"></script>
+</body>
+
+</html>
